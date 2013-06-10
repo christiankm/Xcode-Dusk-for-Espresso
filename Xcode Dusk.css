@@ -1,0 +1,407 @@
+/**
+ *
+ *   Xcode Dusk
+ *   
+ *   Espresso Theme by Christian Mitteldorf.
+ *   Copyright (c) 2013. All rights reserved.
+ *
+ */
+
+/** @theme Xcode Dusk
+  @override-placeholders identifier, other.identifier, html, css, js, phphtml, xml, sourcecode.js
+*/
+
+/* @group Global */
+
+// All files
+:document-base {
+	color: #eee;
+	background-color: rgba(40,43,52,1);
+	selection-background-color: rgba(120,120,98,1);
+	current-line-background-color: rgba(40,43,52,0);
+	insertion-point-color: #fff;
+	font-weight: normal;
+}
+
+// Spell-checking
+apache, css, js, php, python, ruby, 
+tag, sourcecode, source {
+    spell-check: enabled;
+}
+
+// Comments and documentation
+comment.line,
+comment.block,
+comment.block.documentation,
+comment > punctuation,
+comment.block > keyword {
+	color: rgba(73,191,101,1);
+	font-weight: normal;
+}
+
+// Special Comments (TODO)
+comment.line.task,
+comment.line.task > punctuation.definition,
+comment.line.task > keyword {
+  //background-color: rgba(133,171,250,1);
+	color: rgba(242,242,160,1);
+  font-style: italic;
+}
+
+// Invalid
+comment.line.invalid {
+	background-color: rgba(252, 23, 23, 0.62);
+	color: #fff;
+}
+
+/* Group Tag */
+itemize.group-start.comment,
+itemize.group-end.comment,
+itemize.group-start name {
+  color: #000000;
+  background-color: #f2f2a0;
+  font-weight: bold;
+}
+
+// Fallback style for all operators
+operator {
+  color: rgba(255, 255, 255, 1);
+}
+
+string.quoted.single {
+	color: rgba(138,132,202,1);
+}
+
+string.quoted.double {
+	color: rgba(229,65,73,1);
+}
+
+/* @end */
+
+/* @group HTML */
+
+html {
+}
+
+tag.doctype, 
+tag.doctype > *, 
+tag.doctype > string.quoted {
+  
+}
+
+/* @group HTML Tags */
+
+/*  */
+tag, 
+tag > string > punctuation {
+	font-weight: normal;
+	color: rgb(255, 255, 255);
+}
+
+/* Tag: < >*/
+tag > punctuation.definition.begin, 
+tag > punctuation.definition.end {
+	color: rgba(182,52,150,1);
+}
+
+/* Tag: Name */
+tag name {
+	color: rgba(182,52,150,1);
+}
+
+/* Tag: Attribute */
+attribute-name, 
+punctuation.definition.tag {
+	color: rgba(103,135,142,1);
+}
+
+/* Tag: Attribute Value */
+tag attribute-value.value {
+	color: rgba(229,65,73,1);
+}
+
+/* Tag: Attribute Quotes */
+tag > string.quoted,
+tag > attribute-with-value > string.quoted {
+	color: rgba(229,65,73,1);
+}
+
+/* Specific HTML Tags */
+
+//
+tag.script name,
+tag.script.open > punctuation.definition,
+tag.script.close > punctuation.definition{
+	color: rgb(222, 139, 101);
+	background-color: #272822;
+}
+
+// 
+tag.style name,
+tag.style.open > punctuation.definition,
+tag.style.close > punctuation.definition,
+{
+	color: rgb(255, 212, 251);
+	background-color: #272822;
+}
+
+/* @end Tags */
+
+latex.function function - parameter, latex.keyword {
+	color: #699d36;
+}
+
+string.quoted-alt {
+	bluecolor: #1a93ae;
+	bluebackground-color: #f4f9fe;
+	color: #1aa1a1;
+	background-color: rgba(235,252,254,1);
+}
+
+html.entity{
+	background-color: rgb(48, 54, 67);
+}
+
+
+open-bracket, close-bracket {
+}
+
+support.function, function-call {
+	color: #4e279a;
+	font-weight: boldd;
+}
+
+keyword.control, storage.type {
+	color: #6700b9;
+}
+
+html invalid.illegal.bad-angle-bracket.html {
+    color: #96cafe;
+    background-color: red;
+}
+
+textile > header {
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group CSS */
+
+css {
+}
+
+/* Selector */
+css selector, 
+css at-rule, 
+css keyword { 
+  color: rgb(102, 217, 239);
+}
+
+/* Property Name */ 
+css property-list > property-name, 
+css.punctuation.separator.key-value, 
+css.rule.punctuation.terminator 
+{ 
+	color: rgba(138,132,202,1);
+	color: rgba(255,255,255,1);
+}
+
+/* Property Value */
+css property-list > property-value,	
+css property-list > property-value > function, 
+css constantXXX, 
+css unit.keyword, 
+css numeric 
+{ 
+	color: rgb(166, 226, 43);
+}
+
+/* Punctuation */ 
+css punctuation.section,
+css punctuation.begin,
+css punctuation.end {
+  color: rgba(255,255,255,1);
+}
+
+css.embedded attribute-name, 
+css.embedded punctuation.definition.tag {
+}
+
+css invalid.illegal.bad-angle-bracket.html {
+  color: #96cafe;
+  background-color: red;
+}
+
+/* @end */
+
+/* @group PHP */
+
+php {
+}
+
+/* PHP block: <?php ?> */
+php delimiter.source, 
+php delimiter.source keyword {
+  color: rgba(194,52,150,1);
+  font-weight: normal;
+}
+
+// PHP Variables
+/*php keyword.variable.predefined,
+php keyword.variable.predefined > punctuation.dollar {
+  color: rgba(159,202,106,1);
+}*/
+
+// Variables
+php variable,
+php variable punctuation {
+	color: rgb(255, 255, 255);
+	font-weight: normal;
+}
+
+/* Variable Accessability (global, public, private) */
+php modifier {
+	color: rgba(194,52,150,1);
+}
+
+// Functions
+php variable.function,
+php keyword.language.function,
+php function.definition > name {
+	color: rgba(0,172,201,1);
+  font-weight: normal;
+}
+
+// Classes
+php class.definition > name,
+php variable.class {
+	color: rgba(148,203,106,1);
+  font-weight: normal;
+}
+
+// 
+php definition keyword,
+//php function.keyword.control,
+php keyword {
+	color: rgba(194,52,150,1);
+  font-weight: normal;
+}
+
+
+
+php keyword.storage {
+	color: rgba(212, 128, 128, 1);
+}
+
+// Types
+php integer {
+	color: rgba(138,132,202,1);
+}
+
+// Constants
+php constant {
+  color: rgba(197,145,92,1);
+}
+
+php constant.numeric {
+	color: rgba(138,132,202,1);
+}
+
+php constant.boolean {
+  color: rgba(194,52,150,1);
+}
+
+// 
+php identifier.function.support_mysql > delimiter.balanced.parenthesis.begin, identifier.function.support.math > delimiter.balanced.parenthesis.begin {
+	color: #cfcb90;
+  background-color: lime;
+}
+
+/* @group PHP Operators */
+
+// String concatenate dot
+php operator.concatenation.dot {
+  color: rgba(194,52,150,1);
+}
+
+// + - * /
+/*php operator.binary {
+  color: rgba(194,52,150,1);
+}
+
+// ! && ||
+php operator.logical,
+php operator.logical.binary {
+  color: rgba(194,52,150,1);
+}
+
+//
+php operator.bitwise {
+  color: rgba(194,52,150,1);
+}
+
+// < > <= >= ==
+php operator.comparison {
+  color: rgba(194,52,150,1);
+}
+
+// = += -= =>
+php operator.assignment {
+  color: rgba(194,52,150,1);
+}*/
+
+/* @end Operators */
+
+/* @end PHP */
+
+/* @group JavaScript */
+
+js {
+}
+
+js variable {
+}
+
+js function {
+ color: rgb(123, 255, 250);
+ /* JS light blue */
+}
+
+js function name{
+ color: rgb(123, 255, 250);
+ //background-color: rgb(52, 84, 79);
+ /* JS light blue + bg */
+}
+
+js variable > punctuation {
+	color: #865fdb;
+}
+
+js keyword {
+	color: rgb(32,176,255);
+}
+
+entity.name.type.instance.js {
+	color: #ffffb6;
+	text-decoration: underline;
+}
+
+string.regex.js, constant.character.escape.js {
+    color: #d27e00;	
+}
+
+js.embedded {
+	color: #434343;
+}
+
+punctuation.definition.string.begin.js, 
+punctuation.definition.string.end.js {
+	color: #d183ad;
+}
+
+constant.character.escape.js {
+	color: #ffa1ca;
+}
+
+/* @end JavaScript */
