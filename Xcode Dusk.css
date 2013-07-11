@@ -1,11 +1,11 @@
-/**
- *
- *   Xcode Dusk
- *   
- *   Espresso Theme by Christian Mitteldorf.
- *   Copyright (c) 2013. All rights reserved.
- *
- */
+//
+//
+//   Xcode Dusk
+//   
+//   Espresso Theme by Christian Mitteldorf.
+//   Copyright (c) 2013. All rights reserved.
+//
+//
 
 /** @theme Xcode Dusk
   @override-placeholders identifier, other.identifier, html, css, js, phphtml, xml, sourcecode.js
@@ -13,7 +13,6 @@
 
 /* @group Global */
 
-// All files
 :document-base {
 	color: #eee;
 	background-color: rgba(40,43,52,1);
@@ -23,10 +22,10 @@
 	font-weight: normal;
 }
 
-// Spell-checking
-apache, css, js, php, python, ruby, 
-tag, sourcecode, source {
-    spell-check: enabled;
+// Language globals
+html, css, php, js, python, ruby, tag, sourcecode, source {
+  font-weight: normal;
+  spell-check: enabled;
 }
 
 // Comments and documentation
@@ -36,22 +35,21 @@ comment.block.documentation,
 comment > punctuation,
 comment.block > keyword {
 	color: rgba(73,191,101,1);
-	font-weight: normal;
 }
 
-// Special Comments (TODO)
-comment.line.task,
+// Comment Tasks (//TODO / #)
+comment.line.documentation,
 comment.line.task > punctuation.definition,
-comment.line.task > keyword {
-  //background-color: rgba(133,171,250,1);
-	color: rgba(242,242,160,1);
-  font-style: italic;
+comment.line.documentation > keyword {
+  background-color: #f2f2a0;
+	color: rgb(197, 145, 92);
 }
 
 // Invalid
 comment.line.invalid {
 	background-color: rgba(252, 23, 23, 0.62);
-	color: #fff;
+	background-color: rgba(40,43,52,1);
+	//color: #fff;
 }
 
 /* Group Tag */
@@ -66,6 +64,12 @@ itemize.group-start name {
 // Fallback style for all operators
 operator {
   color: rgba(255, 255, 255, 1);
+}
+
+
+// Strings
+string.quoted {
+  color: rgba(229,65,73,1);
 }
 
 string.quoted.single {
@@ -191,7 +195,7 @@ textile > header {
 css {
 }
 
-/* Selector */
+// Selector
 css selector, 
 css at-rule, 
 css keyword { 
@@ -240,18 +244,12 @@ css invalid.illegal.bad-angle-bracket.html {
 php {
 }
 
-/* PHP block: <?php ?> */
+// PHP block: <?php ?>
 php delimiter.source, 
 php delimiter.source keyword {
   color: rgba(194,52,150,1);
   font-weight: normal;
 }
-
-// PHP Variables
-/*php keyword.variable.predefined,
-php keyword.variable.predefined > punctuation.dollar {
-  color: rgba(159,202,106,1);
-}*/
 
 // Variables
 php variable,
@@ -260,27 +258,36 @@ php variable punctuation {
 	font-weight: normal;
 }
 
-/* Variable Accessability (global, public, private) */
-php modifier {
-	color: rgba(194,52,150,1);
-}
-
 // Functions
 php variable.function,
 php keyword.language.function,
 php function.definition > name {
 	color: rgba(0,172,201,1);
-  font-weight: normal;
 }
 
-// Classes
-php class.definition > name,
-php variable.class {
+// Classes ($this, properties, etc.)
+php class.definition > keyword.control {
+  color: rgba(194,52,150,1)
+}
+
+php class.definition > name {
+  color: rgb(255, 255, 255);  
+}
+
+php variable.class,
+php variable.property,
+php variable.property > punctuation {
 	color: rgba(148,203,106,1);
   font-weight: normal;
 }
 
-// 
+php keyword.variable.language,
+php keyword.variable.language > punctuation {
+ color: rgba(194,52,150,1);
+}
+
+// Keywords
+php modifier,
 php definition keyword,
 //php function.keyword.control,
 php keyword {
@@ -298,6 +305,7 @@ php keyword.storage {
 php integer {
 	color: rgba(138,132,202,1);
 }
+
 
 // Constants
 php constant {
